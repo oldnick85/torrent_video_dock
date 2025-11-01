@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  torrent-video-dock:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/data/input
+      - ./:/app/data/output
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    user: "1000:1000"
